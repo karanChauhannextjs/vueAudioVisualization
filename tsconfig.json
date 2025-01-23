@@ -1,0 +1,19 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".", // Ensures paths are resolved from the root of the project
+    "paths": {
+      "@/*": ["./*"] // Adds support for `@/` alias used in Nuxt
+    },
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"], // Add types for Nuxt and modules if required
+    "resolveJsonModule": true, // Allows importing `.json` files
+    "esModuleInterop": true // Ensures compatibility with CommonJS modules
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue", // Ensures `.vue` files are included in TypeScript compilation
+    "./assets/**/*.mp3" // Include `.mp3` files explicitly for TypeScript awareness
+  ]
+}
